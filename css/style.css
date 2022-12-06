@@ -1,0 +1,164 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  height: 100vh;
+}
+
+body {
+  height: 100vh;
+  font-family: 'Outfit', sans-serif;
+  background-color: hsl(217, 54%, 11%);
+  display: grid;
+  place-content: center;
+  font-size: 1.4rem;
+}
+
+.card {
+  max-width: 35rem;
+  padding: 2.5rem 2.5rem 1.5rem;
+  background-color: hsl(216, 50%, 16%);
+  border-radius: 12px;
+  position: relative;
+}
+
+.card::after {
+  position: absolute;
+  content: '';
+  background-color: rgb(0 0 0 / 3%);
+  top: 5%;
+  left: -5%;
+  width: 39rem;
+  height: 61rem;
+  z-index: -1;
+  border-radius: 30px;
+}
+
+.img-box {
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  max-width: 30rem;
+  max-height: 30rem;
+}
+
+.img-box img {
+  width: 100%;
+}
+
+.img-box::after {
+  position: absolute;
+  content: '';
+  display: block;
+  inset: 0;
+  background-color: rgba(0, 255, 247, 0.490);
+  background-image: url(../images/icon-view.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+  transition: all 0.2s ease-out;
+
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+}
+
+.img-box:hover::after {
+  opacity: 1;
+  pointer-events: auto;
+  visibility: visible;
+}
+
+.card-body {
+  padding-top: 2.4rem;
+}
+
+.card-body h2 {
+  font-size: 2.2rem;
+  font-weight: 600;
+  color: hsl(0, 0%, 100%);
+  letter-spacing: 1px;
+  margin-bottom: 1rem;
+}
+
+.card-body h2:hover {
+  cursor: pointer;
+  color: hsl(178, 100%, 50%);
+}
+
+.card-body p {
+  font-size: 1.8rem;
+  line-height: 1.5;
+  color: hsl(215, 51%, 70%);
+}
+
+.eth-days-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2.6rem 0 2.6rem;
+  border-bottom: 1px solid hsl(215, 32%, 27%);
+}
+
+.eth-box {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.eth-box .text {
+  letter-spacing: 1px;
+}
+
+.eth-box .price--text {
+  color: hsl(178, 100%, 50%);
+  font-weight: 600;
+}
+
+.eth-box .days--text {
+  color: hsl(215, 51%, 70%);
+}
+
+.author-box {
+  display: flex;
+  gap: 1.4rem;
+  padding: 1.8rem 0 1.8rem;
+  align-items: center;
+}
+
+.author-box img {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 2px solid hsl(0, 0%, 100%);
+}
+
+.author-box p {
+  font-size: 1.8rem;
+  color: hsl(215, 51%, 70%);
+}
+
+.author-name {
+  color: hsl(0, 0%, 100%);
+}
+
+.author-name:hover {
+  color: hsl(178, 100%, 50%);
+  cursor: pointer;
+}
+
+@media (max-width: 24em) {
+  html {
+    font-size: 56.25%;
+  }
+
+  .eth-box .text {
+    font-size: 1.4rem;
+  }
+}
